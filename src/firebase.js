@@ -2,14 +2,14 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyCaYMmyxxI623qe7pJ_r02oXfRTuFKMrGk",
-    authDomain: "streetlight-26568.firebaseapp.com",
-    projectId: "streetlight-26568",
-    storageBucket: "streetlight-26568.firebasestorage.app",
-    messagingSenderId: "127947363307",
-    appId: "1:127947363307:web:6e866475a4f87c3746ffae",
-    measurementId: "G-DT171QDG0M",
-    databaseURL: 'https://streetlight-26568-default-rtdb.firebaseio.com/',
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
+    databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
 };
 
 export const app = initializeApp(firebaseConfig);
