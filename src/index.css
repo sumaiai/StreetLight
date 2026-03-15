@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Glowing pulsing button */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px #FFD60A, 0 0 10px #FFD60A, 0 0 20px #FFD60A;
+  }
+
+  50% {
+    box-shadow: 0 0 20px #FFD60A, 0 0 40px #FFD60A, 0 0 60px #FFD60A;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #FFD60A, 0 0 10px #FFD60A, 0 0 20px #FFD60A;
+  }
+}
+
+.btn-glow {
+  animation: glowPulse 2s ease-in-out infinite;
+  border: none;
+}
+
+/* Points fly up animation */
+@keyframes flyUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-60px) scale(1.4);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-120px) scale(0.8);
+  }
+}
+
+.points-fly {
+  position: fixed;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD60A;
+  pointer-events: none;
+  animation: flyUp 1.5s ease-out forwards;
+  z-index: 9999;
+  text-shadow: 0 0 10px #FFD60A, 0 0 20px #FFD60A;
+}
+
+/* Floating particles */
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFD60A;
+  pointer-events: none;
+  animation: float linear infinite;
+  z-index: 0;
+}
